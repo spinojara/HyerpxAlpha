@@ -160,12 +160,6 @@ void hyperxFrame::createFrame() {
   wxPanel *panel = new wxPanel(this, wxID_ANY);
   auto sizer = new wxBoxSizer(wxVERTICAL);
 
-  // logo
-  wxBitmapBundle logoImg(
-      wxImage(m_runDir + "img/hyperx.png", wxBITMAP_TYPE_PNG));
-  auto logo = new wxStaticBitmap(panel, wxID_ANY, logoImg, wxDefaultPosition,
-                                 wxSize(200, 70));
-
   connectedLabel = new wxStaticText(panel, wxID_ANY, _T("Connected"));
 
   // Feature
@@ -213,7 +207,6 @@ void hyperxFrame::createFrame() {
     buttonBox->Add(hideButton, 0, wxEXPAND | wxALL, margin);
   }
 
-  sizer->Add(logo, 0, wxLEFT | wxRIGHT, margin);
   sizer->Add(connectedLabel, 0, wxLEFT | wxRIGHT, margin);
   sizer->Add(buttonBox, 0, wxEXPAND | wxALL, margin);
 
